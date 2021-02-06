@@ -1,0 +1,34 @@
+@import "variables";
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Atma', cursive;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-primary;
+    background-color: $bg-color;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+.main-content-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 17rem);
+}
+

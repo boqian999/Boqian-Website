@@ -1,0 +1,24 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
+
+.main-content {
+    @include mainContainer;
+
+    p {
+        font-size: 1.6rem;
+        text-align: center;
+
+        a {
+            font-size: 1.8rem;
+        }
+
+        a:visited, a:link {
+            color: $color-primary;
+        }
+
+        a:hover {
+            color: $bg-color;
+            background-color: $color-primary;
+        }
+    }
+}

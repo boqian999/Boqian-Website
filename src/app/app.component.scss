@@ -1,0 +1,196 @@
+@import "../assets/scss/variables";
+
+/* app-root */
+:host {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100vh;
+}
+
+:root {
+    *,
+    *::after,
+    *::before{
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+    }
+
+    body {
+        box-sizing: border-box;
+        font-family: 'Atma', cursive;
+        font-weight: 400;
+        line-height: 1.7;
+        color: $color-primary;
+        background-color: $bg-color;
+    }
+}
+
+.mainContent {
+    /* Make the footer always stick to the bottom */
+    flex-grow: 1;
+}
+
+.header {
+    text-align: center;
+
+    &__title {
+        padding: 4rem 0 0;
+        text-transform: uppercase;
+        animation: pulsate 3s infinite;
+        cursor: pointer;
+    }
+
+}
+
+.navigation {
+    margin-top: 2.5rem;
+    font-size: 1em;
+
+    ul {
+        display: flex;
+        max-width: 100rem;
+        padding-bottom: 2em;
+        margin: 0 auto;
+        border-bottom: 0.5px solid;
+        justify-content: center;
+        list-style: none;
+
+
+        li {
+            font-size: 2em;
+            padding: 0 2em;
+            transition: all 1s ease;
+            cursor: pointer;
+
+            &:not(:last-child) {
+                border-right: 1px solid $color-primary;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+
+        li:hover {
+            background-image: linear-gradient(105deg,
+                    transparent 0%,
+                    transparent 50%,
+                    $color-primary 50%);
+            background-size: 220%;
+            background-position: 98%;
+            border-color: $color-primary;
+            color: $bg-color;
+        }
+    }
+
+}
+
+.footer {
+    &__copyright {
+        max-width: 100rem;
+        padding: 2rem 0;
+        margin: 0 auto;
+        border-top: 0.5px solid;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}
+
+.background {
+    position: relative;
+
+    /*
+    &__linesContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: -1;
+
+        &--line {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            //background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -50%;
+                left: 0;
+                height: 12vh;
+                width: 100%;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #000000 100%);
+                animation: lineRun 6s 0s infinite;
+                animation-fill-mode: forwards;
+                animation-timing-function: cubic-bezier(.32,.52,.86,.93);
+            }
+
+
+            &:nth-child(1) {
+                margin-left: 20%;
+                &::after{
+                    animation-delay: 0s;
+                }
+            }
+            &:nth-child(2) {
+                margin-left: 40%;
+                &::after{
+                    animation-delay: 0.7s;
+                }
+            }
+            &:nth-child(3) {
+                margin-left: 60%;
+                &::after{
+                    animation-delay: 1.4s;
+                }
+            }
+            &:nth-child(4) {
+                margin-left: 80%;
+                &::after{
+                    animation-delay: 2.1s;
+                }
+            }
+        }
+    }
+    */
+
+}
+
+@keyframes lineRun {
+     0% {
+         top: -20%;
+     }
+
+     100% {
+         top: 120%;
+     }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+

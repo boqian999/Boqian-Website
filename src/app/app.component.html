@@ -1,0 +1,28 @@
+<div class="mainContent">
+	<div class="background">
+		<div class="background__linesContainer">
+			<div class="background__linesContainer--line"></div>
+			<div class="background__linesContainer--line"></div>
+			<div class="background__linesContainer--line"></div>
+			<div class="background__linesContainer--line"></div>
+		</div>
+	</div>
+
+	<header class="header">
+		<h1 class="header__title" (click)="goHome()">Welcome to my world</h1>
+	</header>
+
+	<nav class="navigation">
+		<ul>
+			<li><a routerLink="">About Me</a></li>
+			<li><a routerLink="/projects">Projects</a></li>
+			<li><a routerLink="/gallery">Gallery</a></li>
+		</ul>
+	</nav>
+
+	<router-outlet></router-outlet>
+</div>
+
+<footer class="footer">
+	<div class="footer__copyright">Copyright &copy; 2021 Boqian Wang</div>
+</footer>
