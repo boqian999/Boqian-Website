@@ -30,27 +30,29 @@
 .mainContent {
     /* Make the footer always stick to the bottom */
     flex-grow: 1;
+    width: 90rem;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .header {
     text-align: center;
 
     &__title {
-        padding: 4rem 0 0;
+        margin: 1.25em auto 0;
         text-transform: uppercase;
-        animation: pulsate 3s infinite;
+        animation: pulsate 4s infinite;
         cursor: pointer;
     }
 
 }
 
 .navigation {
-    margin-top: 2.5rem;
+    margin-top: 2em;
     font-size: 1em;
 
     ul {
         display: flex;
-        max-width: 100rem;
         padding-bottom: 2em;
         margin: 0 auto;
         border-bottom: 0.5px solid;
@@ -59,7 +61,7 @@
 
 
         li {
-            font-size: 2em;
+            font-size: 1.75em;
             padding: 0 2em;
             transition: all 1s ease;
             cursor: pointer;
@@ -90,7 +92,7 @@
 
 .footer {
     &__copyright {
-        max-width: 100rem;
+        max-width: 90rem;
         padding: 2rem 0;
         margin: 0 auto;
         border-top: 0.5px solid;

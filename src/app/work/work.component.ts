@@ -9,7 +9,7 @@ import { Title } from '@angular/platform-browser';
 export class WorkComponent implements OnInit {
 
   constructor(private titleService: Title) {
-      this.titleService.setTitle('My Project');
+      this.titleService.setTitle('About Me');
   }
 
   ngOnInit() {

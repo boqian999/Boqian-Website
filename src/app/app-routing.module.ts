@@ -15,7 +15,7 @@ const routes: Routes = [
         component: GalleryComponent
     },
     {
-        path: 'projects',
+        path: 'about-me',
         component:  WorkComponent
     }
 ];
