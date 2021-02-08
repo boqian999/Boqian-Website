@@ -17,20 +17,40 @@ a {
 }
 
 p {
-    font-size: 1em;
+    font-size: 0.75em;
     line-height: 1.5;
     list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
+    @include screen-small {
+        font-size: 0.9em;
+    }
+
+    @include screen-medium {
+        font-size: 1em;
+    }
+
+    @include screen-large {
+        font-size: 1.25em;
+    }
 }
 
 .timeline {
     line-height: 1.5;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 20px;;
     width: 100%;
+
+    @include screen-small {
+        padding: 0 15px 0 40px;
+    }
+
+    @include screen-medium {
+        padding: 0 20px 0 40px;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         line-height: inherit;
     }
@@ -89,7 +109,16 @@ p {
 }
 
 .timeline-content {
-    padding-bottom: 40px;
+    padding-bottom: 25px;
+    
+    @include screen-small {
+        padding-bottom: 35px;
+    }
+
+    @include screen-medium {
+        padding-bottom: 40px;
+    }
+
     p:last-child {
         margin-bottom: 0;
     }
@@ -121,12 +150,35 @@ p {
         }
     }
     .timeline-content {
-        padding: 40px 0 70px;
+        padding: 1em 0 2.75em;
+
+        @include screen-small {
+            padding: 1.5em 0 3.25em;
+        }
+
+        @include screen-medium {
+            padding: 2.5em 0 4.25em;
+        }
     }
     .timeline-title {
         margin: 0;
     }
 }
+
+.period-top {
+    .timeline-content {
+        padding: 0 0 1em;
+
+        @include screen-small {
+            padding: 1.5em 0;
+        }
+
+        @include screen-medium {
+            padding: 2.5em 0;
+        }
+    }
+}
+
 
 .timeline-split {
     @include screen-medium {
@@ -152,6 +204,7 @@ p {
         }
         .timeline-info {
             padding-right: 30px;
+            text-align: right;
         }
         .period .timeline-title {
             position: relative;
@@ -162,6 +215,16 @@ p {
 
 .timeline-centered {
     @extend .timeline-split;
+
+    .timeline-item.period-top .timeline-marker{
+        &::after {
+            display: none;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
     @include screen-large {
         &,
         .timeline-item,

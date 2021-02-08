@@ -4,15 +4,36 @@
 
 .main-content {
     @include mainContainer;
+    min-height: 100rem;
+
+    @include screen-large {
+        min-height: 35rem;
+    }
+
+    @include screen-xlarge {
+        min-height: 42.5rem;
+    } 
 
     .gallery {
         width: 20rem;
         margin: auto;
-        padding-top: 5.5rem;
-        perspective: 80rem;
+        padding-top: 1rem;
         position: relative;
 
-        @include screen-mlarge {
+        @include screen-medium {
+            perspective: 80rem;
+            padding-top: 4.5rem;
+            width: 16rem;
+            perspective: 60rem;
+        }
+
+        @include screen-large {
+            padding-top: 5.5rem;
+            perspective: 80rem;
+            width: 20rem;
+        }
+
+        @include screen-xlarge {
             width: 24rem;
         }
 
@@ -29,38 +50,105 @@
 
             figure {
                 width: 100%;
-                height: 15rem;
+                height: 12rem;
                 padding: 1px;
                 overflow: hidden;
-                position: absolute;
                 background-image: linear-gradient(to right bottom, $color-primary--light, $color-primary--dark);
 
                 &:nth-child(1) {
-                    transform: rotateY(0deg) translateZ(25rem);
+                    top: 0;
                 }
                 &:nth-child(2) {
-                    transform: rotateY(45deg) translateZ(25rem);
+                    top: 13rem;
                 }
                 &:nth-child(3) {
-                    transform: rotateY(90deg) translateZ(25rem);
+                    top: 26rem;
                 }
                 &:nth-child(4) {
-                    transform: rotateY(135deg) translateZ(25rem);
+                    top: 39rem;
                 }
                 &:nth-child(5) {
-                    transform: rotateY(180deg) translateZ(25rem);
+                    top: 52rem;
                 }
                 &:nth-child(6) {
-                    transform: rotateY(225deg) translateZ(25rem);
+                    top: 65rem;
                 }
                 &:nth-child(7) {
-                    transform: rotateY(270deg) translateZ(25rem);
+                    top: 78rem;
                 }
                 &:nth-child(8) {
-                    transform: rotateY(315deg) translateZ(25rem);
+                    top: 90rem;
                 }
 
-                @include screen-mlarge {
+                @include screen-medium {
+                    position: absolute;
+                    height: 12rem;
+
+                    &:nth-child(1) {
+                        top: 0;
+                        transform: rotateY(0deg) translateZ(20rem);
+                    }
+                    &:nth-child(2) {
+                        top: 0;
+                        transform: rotateY(45deg) translateZ(20rem);
+                    }
+                    &:nth-child(3) {
+                        top: 0;
+                        transform: rotateY(90deg) translateZ(20rem);
+                    }
+                    &:nth-child(4) {
+                        top: 0;
+                        transform: rotateY(135deg) translateZ(20rem);
+                    }
+                    &:nth-child(5) {
+                        top: 0;
+                        transform: rotateY(180deg) translateZ(20rem);
+                    }
+                    &:nth-child(6) {
+                         top: 0;
+                        transform: rotateY(225deg) translateZ(20rem);
+                    }
+                    &:nth-child(7) {
+                        top: 0;
+                        transform: rotateY(270deg) translateZ(20rem);
+                    }
+                    &:nth-child(8) {
+                        top: 0;
+                        transform: rotateY(315deg) translateZ(20rem);
+                    }
+                }
+
+
+                @include screen-large {
+                    height: 15rem;
+
+                    &:nth-child(1) {
+                        transform: rotateY(0deg) translateZ(25rem);
+                    }
+                    &:nth-child(2) {
+                        transform: rotateY(45deg) translateZ(25rem);
+                    }
+                    &:nth-child(3) {
+                        transform: rotateY(90deg) translateZ(25rem);
+                    }
+                    &:nth-child(4) {
+                        transform: rotateY(135deg) translateZ(25rem);
+                    }
+                    &:nth-child(5) {
+                        transform: rotateY(180deg) translateZ(25rem);
+                    }
+                    &:nth-child(6) {
+                        transform: rotateY(225deg) translateZ(25rem);
+                    }
+                    &:nth-child(7) {
+                        transform: rotateY(270deg) translateZ(25rem);
+                    }
+                    &:nth-child(8) {
+                        transform: rotateY(315deg) translateZ(25rem);
+                    }
+                }
+
+                @include screen-xlarge {
                     height: 18rem;
 
                     &:nth-child(1) {
