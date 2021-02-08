@@ -1,4 +1,5 @@
 @import "../assets/scss/variables";
+@import "../assets/scss/mixins";
 
 /* app-root */
 :host {
@@ -30,9 +31,13 @@
 .mainContent {
     /* Make the footer always stick to the bottom */
     flex-grow: 1;
-    width: 90rem;
+    width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+
+    @include screen-xlarge {
+        width: 90rem;
+    }
 }
 
 .header {
@@ -48,17 +53,25 @@
 }
 
 .navigation {
-    margin-top: 2em;
-    font-size: 1em;
+    margin-top: 1em;
+    font-size: 0.875em;
+
+    @include screen-mlarge {
+        font-size: 1em;
+    }
 
     ul {
         display: flex;
-        padding-bottom: 2em;
+        padding-bottom: 1em;
         margin: 0 auto;
         border-bottom: 0.5px solid;
         justify-content: center;
         list-style: none;
 
+
+        @include screen-mlarge {
+            padding-bottom: 2em;
+        }
 
         li {
             font-size: 1.75em;
@@ -92,12 +105,21 @@
 
 .footer {
     &__copyright {
-        max-width: 90rem;
-        padding: 2rem 0;
+        width: 100%;
+        padding: 1rem 0;
         margin: 0 auto;
         border-top: 0.5px solid;
         text-align: center;
-        font-size: 1.6rem;
+        font-size: 1.25em;
+
+        @include screen-mlarge {
+            padding: 2rem 0;
+            font-size: 1.5em;
+        }
+
+        @include screen-xlarge {
+            width: 90rem;
+        }
     }
 }
 

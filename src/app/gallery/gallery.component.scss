@@ -1,20 +1,19 @@
 @import "../../assets/scss/mixins";
 @import "../../assets/scss/variables";
+@import "../../assets/scss/base";
 
 .main-content {
     @include mainContainer;
 
     .gallery {
-        width: 24rem;
+        width: 20rem;
         margin: auto;
-        padding-top: 7rem;
+        padding-top: 5.5rem;
         perspective: 80rem;
         position: relative;
 
-        p {
-            position: absolute;
-            top: 0;
-            font-size: 1.6rem;
+        @include screen-mlarge {
+            width: 24rem;
         }
 
         &__content {
@@ -30,35 +29,64 @@
 
             figure {
                 width: 100%;
-                height: 18rem;
+                height: 15rem;
                 padding: 1px;
                 overflow: hidden;
                 position: absolute;
                 background-image: linear-gradient(to right bottom, $color-primary--light, $color-primary--dark);
 
                 &:nth-child(1) {
-                    transform: rotateY(0deg) translateZ(30rem);
+                    transform: rotateY(0deg) translateZ(25rem);
                 }
                 &:nth-child(2) {
-                    transform: rotateY(45deg) translateZ(30rem);
+                    transform: rotateY(45deg) translateZ(25rem);
                 }
                 &:nth-child(3) {
-                    transform: rotateY(90deg) translateZ(30rem);
+                    transform: rotateY(90deg) translateZ(25rem);
                 }
                 &:nth-child(4) {
-                    transform: rotateY(135deg) translateZ(30rem);
+                    transform: rotateY(135deg) translateZ(25rem);
                 }
                 &:nth-child(5) {
-                    transform: rotateY(180deg) translateZ(30rem);
+                    transform: rotateY(180deg) translateZ(25rem);
                 }
                 &:nth-child(6) {
-                    transform: rotateY(225deg) translateZ(30rem);
+                    transform: rotateY(225deg) translateZ(25rem);
                 }
                 &:nth-child(7) {
-                    transform: rotateY(270deg) translateZ(30rem);
+                    transform: rotateY(270deg) translateZ(25rem);
                 }
                 &:nth-child(8) {
-                    transform: rotateY(315deg) translateZ(30rem);
+                    transform: rotateY(315deg) translateZ(25rem);
+                }
+
+                @include screen-mlarge {
+                    height: 18rem;
+
+                    &:nth-child(1) {
+                        transform: rotateY(0deg) translateZ(30rem);
+                    }
+                    &:nth-child(2) {
+                        transform: rotateY(45deg) translateZ(30rem);
+                    }
+                    &:nth-child(3) {
+                        transform: rotateY(90deg) translateZ(30rem);
+                    }
+                    &:nth-child(4) {
+                        transform: rotateY(135deg) translateZ(30rem);
+                    }
+                    &:nth-child(5) {
+                        transform: rotateY(180deg) translateZ(30rem);
+                    }
+                    &:nth-child(6) {
+                        transform: rotateY(225deg) translateZ(30rem);
+                    }
+                    &:nth-child(7) {
+                        transform: rotateY(270deg) translateZ(30rem);
+                    }
+                    &:nth-child(8) {
+                        transform: rotateY(315deg) translateZ(30rem);
+                    }
                 }
 
                 &:hover{

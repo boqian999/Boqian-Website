@@ -129,7 +129,7 @@ p {
 }
 
 .timeline-split {
-    @media (min-width: 768px) {
+    @include screen-medium {
         .timeline {
             display: table;
         }
@@ -162,7 +162,7 @@ p {
 
 .timeline-centered {
     @extend .timeline-split;
-    @media (min-width: 992px) {
+    @include screen-large {
         &,
         .timeline-item,
         .timeline-info,
@@ -212,10 +212,10 @@ p {
             text-align: center;
         }
         .timeline-item.period {
-            padding: 50px 0 90px;
+            padding: 2.25rem 0 4rem;
         }
         .timeline-item.period-top {
-            padding: 5px 0 50px;
+            padding: 0.25rem  0 2.25rem;
         }
         .period .timeline-marker:after {
             height: 30px;

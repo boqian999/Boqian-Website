@@ -1,3 +1,41 @@
+// media aliases and breakpoints
+$screen-small-min: 500px;
+$screen-medium-min: 768px;
+$screen-large-min: 992px;
+$screen-mlarge-min: 1280px;
+$screen-xlarge-min: 1440px;
+
+@mixin screen-small {
+    @media screen and (min-width: #{$screen-small-min}) {
+      @content;
+    }
+}
+
+@mixin screen-medium {
+    @media screen and (min-width: #{$screen-medium-min}) {
+      @content;
+    }
+}
+  
+@mixin screen-large {
+    @media screen and (min-width: #{$screen-large-min}) {
+        @content;
+    }
+}
+
+@mixin screen-mlarge {
+    @media screen and (min-width: #{$screen-mlarge-min}) {
+        @content;
+    }
+}
+
+@mixin screen-xlarge {
+    @media screen and (min-width: #{$screen-xlarge-min}) {
+        @content;
+    }
+} 
+ 
+
 @mixin clearfix {
     &::after {
         content: '';
@@ -8,9 +46,18 @@
 
 @mixin mainContainer {
     flex: 1;
-    max-width: 80rem;
-    min-height: 50rem;
-    margin: 3.5em auto;
+    min-height: 35rem;
+    margin: 1.5em;
     position: relative;
     overflow: hidden;
+
+    @include screen-large {
+        margin: 2.5em;
+    }
+
+    @include screen-xlarge {
+        min-height: 42.5rem;
+        margin: 3.5em auto;
+        max-width: 80rem;
+    } 
 }

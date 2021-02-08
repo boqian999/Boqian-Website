@@ -29,12 +29,22 @@
         display: block;
         float: left;
         width: 50%;
-        height: 27.5rem;
-        border: 10px solid $bg-color;
+        height: 20rem;
+        border: 5px solid $bg-color;
         perspective: 150rem;
         -moz-perspective: 150rem;
         position: relative;
         transition: all .5s ease;
+
+        @include screen-large {
+            height: 24rem;
+            border: 7.5px solid $bg-color;
+        }
+
+        @include screen-mlarge {
+            height: 27.5rem;
+            border: 10px solid $bg-color;
+        }
 
         &:hover {
             background-color: $bg-color;
@@ -110,8 +120,16 @@
 .story {
     width: 100%;
     height: 100%;
-    padding: 2em;
+    padding: 1.25em;
     font-size: 1rem;
+
+    @include screen-large {
+        padding: 1.5em;
+    }
+
+    @include screen-mlarge {
+        padding: 2em;
+    }
 
     &--wrap {
         &--2 {
@@ -147,15 +165,27 @@
     &__shape--1 {
         display: inline-block;
         float: left;
-        width: 15rem;
-        height: 15rem;
-        margin-right: 3rem;
+        width: 10rem;
+        height: 10rem;
+        margin-right: 1.25rem;
         shape-outside: circle(50% at 50% 50%);
         -webkit-clip-path: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
         position: relative;
         vertical-align: top;
         transition: all .5s;
+
+        @include screen-large {
+            width: 12.5rem;
+            height: 12.5rem;
+            margin-right: 1.5rem;
+        }
+
+        @include screen-mlarge {
+            width: 15rem;
+            height: 15rem;
+            margin-right: 3rem;
+        }
 
         &--img {
             width: 100%;
@@ -165,11 +195,20 @@
 
     &__shape--2 {
         display: inline-block;
-        width: 18rem;
-        height: 16rem;
+        width: 11rem;
+        height: 10rem;
         float: right;
         position: relative;
         shape-outside: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0% 75%, 0% 25%);
+
+        @include screen-large {
+            width: 13rem;
+            height: 16rem;
+        }
+
+        @include screen-mlarge {
+            width: 18rem;
+        }
 
         &--img {
             width: 55%;
@@ -194,13 +233,22 @@
         }
 
         &--p2 {
-            right: 6rem;
-            top: 4rem;
+            right: 4rem;
+            top: 3rem;
+
+            @include screen-large {
+                right: 6rem;
+                top: 4rem;
+            }
         }
 
         &--p3 {
-            right: 2rem;
-            top: 8rem;
+            right: 1.5rem;
+            top: 6.5rem;
+            @include screen-large {
+                right: 2rem;
+                top: 8rem;
+            }
         }
     }
 
@@ -211,7 +259,7 @@
         transform: translate(-50%, 20%);
         color: #ffffff;
         text-transform: uppercase;
-        font-size: 1.7em;
+        font-size: 1.25em;
         font-weight: 600;
         text-align: center;
         /* init state */
@@ -219,16 +267,36 @@
         transition: all .5s;
         backface-visibility: hidden;
 
+        @include screen-large {
+            font-size: 1.5em;
+        }
+
+        @include screen-mlarge {
+            font-size: 1.75em;
+        }
+
     }
 
     &__text {
         display: block;
         vertical-align: top;
-        font-size: 1rem;
+        font-size: 0.875rem;
         transition: all 1s ease;
 
+        @include screen-mlarge {
+            font-size: 1rem;
+        }
+
         p {
-            font-size: 1.8em;
+            font-size: 1.25em;
+
+            @include screen-large {
+                font-size: 1.5em;
+            }
+
+            @include screen-mlarge {
+                font-size: 1.75em;
+            }
         }
 
         &--social-link:not(:last-child) {
@@ -236,8 +304,16 @@
         }
 
         &--social-link{
-            font-size: 1.5em;
+            font-size: 1.25em;
             transition: all 1s ease;
+
+            @include screen-large {
+                font-size: 1.5em;
+            }
+
+            @include screen-mlarge {
+                font-size: 1.75em;
+            }
 
             &:first-child {
                 margin-left: 1rem;
@@ -257,9 +333,17 @@
             display: inline-block;
             color: inherit;
             font-weight: 600;
-            font-size: 1.5em;
+            font-size: 1.25em;
             line-height: 4;
             transition: all .8s ease;
+
+            @include screen-large {
+                font-size: 1.5em;
+            }
+
+            @include screen-mlarge {
+                font-size: 1.75em;
+            }
         }
 
         &--2 a:hover, &--3 a:hover{
@@ -267,7 +351,7 @@
         }
 
         &--3 {
-            width: 60%;
+            width: 100%;
             color: $bg-color--light;
 
             em {
