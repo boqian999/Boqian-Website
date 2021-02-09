@@ -190,6 +190,10 @@
     &__social-link {
         margin-top: 1em;
 
+        @include screen-small {
+            margin-top: 1.5em;
+        }
+
         @include screen-medium {
             margin-top: 2em;
         }
