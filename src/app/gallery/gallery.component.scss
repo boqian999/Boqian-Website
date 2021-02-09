@@ -6,7 +6,7 @@
     @include mainContainer;
     min-height: 100rem;
 
-    @include screen-large {
+    @include screen-medium {
         min-height: 35rem;
     }
 
@@ -44,8 +44,10 @@
             transform-style: preserve-3d;
 
             &:hover {
-                animation-play-state: paused;
-                cursor: pointer;
+                @include screen-medium {
+                    animation-play-state: paused;
+                    cursor: pointer;
+                }
             }
 
             figure {

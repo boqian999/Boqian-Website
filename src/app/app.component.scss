@@ -83,10 +83,10 @@
         li {
             font-size: 1.25em;
             padding: 0 1.5em;
-            transition: all 1s ease;
             cursor: pointer;
 
             @include screen-small {
+                transition: all 1s ease;
                 font-size: 1.5em;
                 padding: 0 2em;
             }
@@ -106,14 +106,16 @@
         }
 
         li:hover {
-            background-image: linear-gradient(105deg,
-                    transparent 0%,
-                    transparent 50%,
-                    $color-primary 50%);
-            background-size: 220%;
-            background-position: 98%;
-            border-color: $color-primary;
-            color: $bg-color;
+            @include screen-small {
+                border-color: $color-primary;
+                color: $bg-color;
+                background-image: linear-gradient(105deg,
+                        transparent 0%,
+                        transparent 50%,
+                        $color-primary 50%);
+                background-size: 220%;
+                background-position: 98%;
+            }
         }
     }
 

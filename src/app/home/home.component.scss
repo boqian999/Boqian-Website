@@ -27,17 +27,29 @@
 
     &__box {
         display: block;
-        float: left;
-        width: 50%;
-        height: 20rem;
+        width: 100%;
+        margin: 0 auto 1em;
+        height: 17rem;
         border: 5px solid $bg-color;
         perspective: 150rem;
         -moz-perspective: 150rem;
         position: relative;
         transition: all .5s ease;
 
+        @include screen-small {
+            width: 28rem;
+            height: 16.5rem;
+        }
+
+        @media screen and (min-width: 600px) {
+            float: left;
+            width: 50%;
+            height: 18.5rem;
+            margin: 0 auto;
+        }
+
         @include screen-large {
-            height: 24rem;
+            height: 22rem;
             border: 7.5px solid $bg-color;
         }
 
@@ -46,17 +58,19 @@
             border: 10px solid $bg-color;
         }
 
-        &:hover {
-            background-color: $bg-color;
 
-            .posts__box__side--front{
-                transform: rotateY(-180deg);
+        @include screen-medium {
+            &:hover {
+                background-color: $bg-color;
+    
+                .posts__box__side--front{
+                    transform: rotateY(-180deg);
+                }
+    
+                .posts__box__side--back{
+                    transform: rotateY(0);
+                }
             }
-
-            .posts__box__side--back{
-                transform: rotateY(0);
-            }
-
         }
 
         &__side {
@@ -71,7 +85,11 @@
             &--front {
                 background-color: transparent;
                 cursor: pointer;
-                //transform: rotateY(180deg);
+                transform: rotateY(180deg);
+
+                @include screen-medium {
+                    transform: rotateY(0);
+                }
             }
 
             &--back {
@@ -79,22 +97,29 @@
                 -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
                 clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
                 background-size: contain;
-                transform: rotateY(180deg);
+                transform: rotateY(0);
 
+                @include screen-medium {
+                    transform: rotateY(180deg);
+                }
             }
         }
     }
 }
 .posts-wrapper-static {
-    background: url(../../assets/img/bg-img-person.jpg);
-    background-size: cover;
-    color: #eee;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+    display: none;
+    @include screen-medium {
+        display: block;
+        background: url(../../assets/img/bg-img-person.jpg);
+        background-size: cover;
+        color: #eee;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
 }
 
 .posts-wrapper {
@@ -162,18 +187,39 @@
         }
     }
 
+    &__social-link {
+        margin-top: 1em;
+
+        @include screen-medium {
+            margin-top: 2em;
+        }
+    }
+
     &__shape--1 {
         display: inline-block;
         float: left;
+        margin-right: 1.5rem;
         width: 10rem;
         height: 10rem;
-        margin-right: 1.25rem;
         shape-outside: circle(50% at 50% 50%);
         -webkit-clip-path: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
         position: relative;
         vertical-align: top;
         transition: all .5s;
+
+        @media screen and (min-width: 600px) {
+            width: 8rem;
+            height: 8rem;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @include screen-medium {
+            width: 10rem;
+            height: 10rem;
+            margin-right: 1.2rem;
+        }
 
         @include screen-large {
             width: 12.5rem;
@@ -195,11 +241,27 @@
 
     &__shape--2 {
         display: inline-block;
-        width: 11rem;
-        height: 10rem;
+        width: 9rem;
+        height: 9rem;
         float: right;
         position: relative;
-        shape-outside: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0% 75%, 0% 25%);
+
+        @include screen-small {
+            width: 13rem;
+            height: 10rem;
+        }
+
+        @media screen and (min-width: 600px) {
+            width: 9rem;
+            height: 9rem;
+            shape-outside: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 5% 75%, 5% 25%);
+        }
+
+        @include screen-medium {
+            width: 11rem;
+            height: 10rem;
+            shape-outside: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0% 75%, 0% 25%);
+        }
 
         @include screen-large {
             width: 13rem;
@@ -207,7 +269,7 @@
         }
 
         @include screen-mlarge {
-            width: 18rem;
+            width: 16rem;
         }
 
         &--img {
@@ -217,14 +279,23 @@
             position: absolute;
             z-index: 10;
             transition: all .2s;
-            outline-offset: 1rem;
+            outline-offset: 0.3rem;
+
+            @include screen-medium {
+                outline-offset: 1rem;
+            }
         }
 
         &--img:hover {
-            outline: 5px solid $color-primary;
-            transform: scale(1.05) translateY(-.5rem);
+            outline: 3px solid $color-primary;
+            transform: scale(1.02) translateY(-.5rem);
             box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
             z-index: 20;
+
+            @include screen-medium {
+                outline: 5px solid $color-primary;
+                transform: scale(1.05) translateY(-.5rem);
+            }
         }
 
         &--p1 {
@@ -236,6 +307,21 @@
             right: 4rem;
             top: 3rem;
 
+            @include screen-small {
+                right: 5rem;
+                top: 3.5rem;
+            }
+
+            @media screen and (min-width: 600px) {
+                right: 3.5rem;
+                top: 2.5rem;
+            }
+    
+            @include screen-medium {
+                right: 4rem;
+                top: 3rem;
+            }
+
             @include screen-large {
                 right: 6rem;
                 top: 4rem;
@@ -243,8 +329,24 @@
         }
 
         &--p3 {
-            right: 1.5rem;
-            top: 6.5rem;
+            right: 1rem;
+            top: 5rem;
+
+            @include screen-small {
+                right: 1rem;
+                top: 7rem;
+            }
+
+            @media screen and (min-width: 600px) {
+                right: 1rem;
+                top: 5rem;
+            }
+
+            @include screen-medium {
+                right: 1.5rem;
+                top: 6.5rem;
+            }
+            
             @include screen-large {
                 right: 2rem;
                 top: 8rem;
@@ -334,8 +436,9 @@
             color: inherit;
             font-weight: 600;
             font-size: 1.25em;
-            line-height: 4;
+            line-height: 1;
             transition: all .8s ease;
+            margin-top: 2em;
 
             @include screen-large {
                 font-size: 1.5em;
