@@ -84,9 +84,9 @@
             font-size: 1.25em;
             padding: 0 1.5em;
             cursor: pointer;
-            transition: all 1s ease;
-
+            
             @include screen-small {
+                transition: all 1s ease;
                 font-size: 1.5em;
                 padding: 0 2em;
             }
