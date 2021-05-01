@@ -44,3 +44,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Security
+localhost*
+root*
+server.*
+v3.ext
+
